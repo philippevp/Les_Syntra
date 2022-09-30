@@ -7,3 +7,5 @@ De files zullen verder geupdate worden.
 
 * install virtualenv
 * import packages
+
+...
