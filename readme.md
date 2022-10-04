@@ -11,3 +11,8 @@ https://www.markdownguide.org/basic-syntax/#code
 * import packages
 
 ...
+
+
+# OPDRACHT
+Voor de opdracht 4/10/22 
+=> Check 07_turtle_straat.py

@@ -38,3 +38,15 @@ for coor in coordinaten:
 # for data in list:
 #     try:
 #         int(data)
+
+
+def print_woord(woord, naam="jef"):
+    print(woord)
+    print(naam)
+
+print_woord("hallo", naam="kevin")
+
+
+lst = (2, 0)
+
+print(lst[0])
