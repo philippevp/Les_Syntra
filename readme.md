@@ -1,4 +1,6 @@
 De files zullen verder geupdate worden.
+
+link naar markdown gids:
 https://www.markdownguide.org/basic-syntax/#code
 
 # Code Syntra lessen 2022
