@@ -17,4 +17,9 @@ https://www.markdownguide.org/basic-syntax/#code
 Voor de opdracht 4/10/22 
 => Check 07_turtle_straat.py
 
-# Toffe 
+# Wie kan met de code uit de filmpjes hieronder iets nieuw maken ?
+* https://youtu.be/yP31iZCF-pw
+* https://youtu.be/vMBrDD2mwl8
+* https://youtu.be/LlY7u27_2uw?list=PLg3AZRFBfHLVcKPcVOK44yY8LC_CesHNG
+* https://youtu.be/1MCI8uckEZ0
+* https://youtu.be/jNmM3lu-y5g
