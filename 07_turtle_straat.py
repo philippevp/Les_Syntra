@@ -1,62 +1,88 @@
 from random import randint
 import turtle as turtle
+import math, random
 from utils.usefull_functions import teken_huis
 
-COORDINATEN = [(0,0), (150, 0), (300, 0)]
-AANTAL_COORDINATEN = 2
+turtle.shape("turtle")
 
-# teken_huis(100)
+def distance_between_points(point_1, point_2):
+    som_kwadraten = math.pow((point_2[0]-point_1[0]), 2) + math.pow((point_2[1]-point_1[1]), 2)
+    # print(som_kwadraten)
+    return math.sqrt(som_kwadraten)
 
-def teken_straat(coordinaten):
-    for coor in coordinaten:
-        teken_huis(100, coor)
+def hoogte_gelijkbenige_driehoek(lengte):
+    # stelling van pythagoras -- middelijn staat loodrecht
+    return math.sqrt(math.pow(lengte,2) - math.pow(lengte/2, 2))
 
-# teken_straat(COORDINATEN)
+# middelpunt van een huis is de hoogte van de driehoek + hoogte van het vierkant
+# dat delen door 2
+# 
+# voor de breedte geldt de helft van de lengte.
+#  
+# We willen een lijst bijhouden van de middelpunten van de huizen en de bijhorende straal (verder weggelegen huizen zullen kleiner zijn)
+# 
+# Voor nu zetten we de huizen op 1 rij => dus is enkel de breedte voldoende om ervoor te zorgen dat ze niet overlappen 
 
 
-coordinaten = []
+def is_punt_in_cirkel(punt, middelpunt_cirkel, straal):
+    return distance_between_points(punt, middelpunt_cirkel) < straal
 
-for x in range(AANTAL_COORDINATEN):
-    coordinaten.append((randint(-200, 200), 0))
+def direction_vector(punt_1, punt_2):
+    radians = math.atan2((punt_2[1]-punt_1[1]), (punt_2[0]-punt_1[0]))
+    return math.degrees(radians)
 
-for coord_a in coordinaten:
-    for coord_b in coordinaten:
-        print("-------------------------")
-        # x-waarde van coord_a
-        print("a_x : ", coord_a[0])
-        # y-waarde van coord_a
-        print("a_y : ", coord_a[1])
-        # x-waarde van coord_b
-        print("b_x : ", coord_b[0])
-        # y-waarde van coord_b
-        print("b_y : ", coord_b[1])
+punt = (0, 0)
+middelpunt_cirkel = (50, (hoogte_gelijkbenige_driehoek(100)+100)/2)
+heading = direction_vector(punt, middelpunt_cirkel)
+start_punt = (random.randint(-200, 200), random.randint(-200, 200))
 
-print(coordinaten)
 
-# we voegen random coordinaten toe aan de lijst
-for x in range(AANTAL_COORDINATEN*3):
-    coordinaten.append((randint(-200, 200), 0))
+def genereer_huizen(aantal, start_punt, lengte):
+    straal = (hoogte_gelijkbenige_driehoek(lengte)+lengte)/2
+    middelpunten = [start_punt]
+    print(middelpunten)
+    print("------- start : ", start_punt)
+    for n in range(aantal-1):
+        print("-------- n --------- : ", n)
+        nieuw_punt = (random.randint(-200, 200), random.randint(-200, 200))
+        point_added = False
+        while not point_added:
+            print("+++++++ ++ +++++", nieuw_punt)
+            for x in middelpunten:
+                print(f"{nieuw_punt} in cirkel van {x}: ", is_punt_in_cirkel(nieuw_punt, x, 2.5*straal))
+                if is_punt_in_cirkel(nieuw_punt, x, 2.5*straal):
+                    print("----A----")
+                    nieuw_punt = (randint(-200, 200), randint(-200, 200))
+                    print("======== BREAK ========")
+                    point_added = False
+                    break                    
+                else:
+                    point_added = True
+            if point_added:                
+                middelpunten.append(nieuw_punt)
+                point_added = True
+                print("::::::: ADDED ::::::::::")
+                
+                    
+            print(middelpunten)                
+            
+                    
+    return middelpunten
 
-print(coordinaten)
+huizen = genereer_huizen(8, start_punt, 50)
 
-nieuw_punt = ((randint(-200, 200), 0))
-print(nieuw_punt)
-teken_huis(100, nieuw_punt)
+# afstand tussen middelpunt en hoekpunt_huis
+straal_2 = distance_between_points(punt, middelpunt_cirkel)
 
-# Dit is niet de enige manier. Het kn waarschijnlijk eenvoudiger. Maar het geeft een mogelijkheid om te vergelijken of 2 huizen met elkaar overlappen langs links van het nieuwe punt
-# je zal in dit geval ook moeten checken of ze lans de andere kant overlappen
-# wanneer 2 punten overlappen moet je het niet toevoegen (append) aan de "list" -- anders wel
-# Er zijn ook andere manieren om te checken of ze overlappen
-for coord in coordinaten:
-    if nieuw_punt[0] < coord[0] + 100 and nieuw_punt[0] > coord[0]:
-        # tekenen moet je niet doen. Dit dient enkel om te visueel na te gaan of de 2 huizen inderdaad langs deze kant overlappen
-        # In je functie zal je enkel nakijken of de 2 punten in de lijst overlappen en zal je de lijst bouwen.
-        # Daarna zal je de gemaakte lijst gebruiken om de huizen te tekenen
-        teken_huis(100, coord)
-        print(f"het punt {coord} raakt ons (nieuw_punt) huis ({nieuw_punt}) langs rechts ")
-    
 
-# In een mogelijke oplossing zal je een punt toevoegen aan de lijst wanneer het niet overlapt met de punten in de lijst. 
-# Wanneer het wel overlapt maak je een nieuw random punt.
+for middelpunt in huizen:
+    turtle.up()
+    turtle.goto(middelpunt)
+    turtle.setheading(180+heading)
+    turtle.forward(straal_2)
+    turtle.setheading(0)
+    turtle.down()
+    teken_huis(50)
+
 
 turtle.done()
