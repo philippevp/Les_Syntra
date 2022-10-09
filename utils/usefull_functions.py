@@ -38,9 +38,20 @@ def teken_parallelogram(lengte_A, lengte_B, hoek):
     # turtle.forward(lengte_B)
     # turtle.left(180-hoek)
 
-def teken_huis(lengte, coordinaat=(0,0)):
+def teken_huis(lengte):
+    
+    turtle.down()
+    turtle.setheading(0)
+    teken_veelhoek(lengte, 4, "left")
+    turtle.setheading(90)
+    turtle.forward(lengte)
+    turtle.setheading(60)
+    teken_veelhoek(lengte, 3, "right")
     turtle.up()
-    turtle.goto(coordinaat)
+
+def teken_huis_2(lengte, point):
+    turtle.up()
+    turtle.goto((point.x, point.y))
     turtle.down()
     turtle.setheading(0)
     teken_veelhoek(lengte, 4, "left")
