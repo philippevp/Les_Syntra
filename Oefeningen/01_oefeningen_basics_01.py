@@ -6,7 +6,8 @@
 
 # 3. 
 # Vraag de gebruiker om zijn leeftijd, geef weer als hij ouder is dan 18 jaar.
- 
+
+
 # 4. 
 # Maak een programma dat van een getal weergeeft even of oneven. Geef een boolean terug.
 
