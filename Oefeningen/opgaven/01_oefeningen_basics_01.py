@@ -28,6 +28,10 @@
 
 # 10. 
 # Vraag de gebruiker om een tekst in te geven. Tel het aantal letters en cijfers en druk deze dan af
+# Dus bv. "banaan":
+# a = 3
+# b = 1
+# n = 2
 
 # 11. 
 # De prijs van een limonade is € 3. Vraag de gebruiker hoeveel limonades hij koopt.
@@ -52,6 +56,7 @@
 # Als hij ja antwoordt, toon je : "Je vindt opleidingen op www.syntra-ab.be".
 # Anders toon je : "Je vindt vacatures op www.vdab.be/jobs".
 
-15.
-Maak een dobbelsteen en gooi de dobbelsteen. Geef de gegooide waarde weer
+
+# 15.
+# Maak een dobbelsteen en gooi de dobbelsteen. Geef de gegooide waarde weer
 
