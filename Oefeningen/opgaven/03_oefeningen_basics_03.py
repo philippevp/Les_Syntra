@@ -13,7 +13,7 @@
 # Toon daarna enkel de vriestemperaturen (temperaturen <= 0).
 
 # 3.
-#  De gebruiker tikt de naam, de lengte en het gewicht van personen tot hij stop als naam typt.
+# De gebruiker tikt de naam, de lengte en het gewicht van personen tot hij stop als naam typt.
 # Toon de naam en het BMI van de personen.
 # Het BMI is het gewicht gedeeld door het kwadraat van de lengte.
 
@@ -96,15 +96,23 @@
 # Morgen zijn we: datum
 # Gisteren waren we: datum
 # Volgend jaar zijn we het jaar X
-#  Maak een programma dat de geboortedatum van de gebruiker vraagt. Druk het volgende af
+
+# 14.
+# Maak een programma dat de geboortedatum van de gebruiker vraagt. Druk het volgende af
 # - zijn geboortedatum inclusief de naam van de dag in het Nederlands
 # voorbeeld: uw geboortedatum is “2/9/1979”, dit was op een zondag
 # - wanneer hij 18 jaar is geworden en de naam van de dag in het Nederlands
-# voorbeeld: u was 18 jaar op datum, dit was op een xxxxx (dag van de week in het Nederlands)
+# voorbeeld: u was 18 jaar op datum, dit was op een xxxxx 
 # - zijn huidige leeftijd
 # voorbeeld: u bent nu x aantal jaar oud)
 # - wanneer hij op pensioen mag gaan (67 jaar, maand nadien)
-# voorbeeld: u mag in “maand” in het “jaar” op pensioen gaan (maand in het Nederlands zetten)
+# voorbeeld: u mag in “maand” in het “jaar” op pensioen gaan 
 # Als input gaan we 3 parameters gebruiken: dag maand jaar
 # Als 1 van de parameters ontbreekt gaan we deze alsnog vragen aan de gebruiker
-#  Maak een programma dat elke seconde de tijd afdrukt en dit gedurende 60 seconden
+
+# 15.
+# Maak een programma dat elke seconde de tijd afdrukt en dit gedurende 60 seconden
+
+
+# 16.
+# Hermaak de methode .split() (strings) in een nieuwe functie.
