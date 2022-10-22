@@ -51,7 +51,7 @@ def get_winner():
     return max(score, key=score.get)
 
 def game():
-    while get_max_score() < 1:
+    while get_max_score() < END_SCORE:
         keuze = input_gebruiker()
         score(vergelijk(keuze))
         scoreboard()
